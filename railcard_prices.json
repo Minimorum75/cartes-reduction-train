@@ -1,0 +1,140 @@
+{
+  "last_updated": "2025-10-26T16:59:18.753356",
+  "cards": [
+    {
+      "name": "Carte Avantage Jeune",
+      "description": "Pour les 12-27 ans",
+      "prices": [
+        {
+          "retailer": "SNCF Connect",
+          "price": 49.0,
+          "url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-jeune",
+          "promo": false,
+          "available": true,
+          "error": "HTTPSConnectionPool(host='www.sncf-connect.com', port=443): Max retries exceeded with url: /catalogue/description/carte-avantage-jeune (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7ee69fd0e420>: Failed to resolve 'www.sncf-connect.com' ([Errno -3] Temporary failure in name resolution)\"))",
+          "timestamp": "2025-10-26T16:59:14.746231"
+        },
+        {
+          "retailer": "Trainline",
+          "price": 49.0,
+          "url": "https://www.thetrainline.com/fr/compagnies-ferroviaires/sncf/cartes-abonnements-de-train",
+          "promo": false,
+          "available": true,
+          "error": "HTTPSConnectionPool(host='www.thetrainline.com', port=443): Max retries exceeded with url: /fr/compagnies-ferroviaires/sncf/cartes-abonnements-de-train (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7ee69fd0f7a0>: Failed to resolve 'www.thetrainline.com' ([Errno -3] Temporary failure in name resolution)\"))",
+          "timestamp": "2025-10-26T16:59:16.751311"
+        },
+        {
+          "retailer": "Omio",
+          "price": 49.0,
+          "url": "https://www.omio.fr/trains/reductions-sncf",
+          "promo": false,
+          "available": true,
+          "error": "HTTPSConnectionPool(host='www.omio.fr', port=443): Max retries exceeded with url: /trains/reductions-sncf (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7ee69fd0ec90>: Failed to resolve 'www.omio.fr' ([Errno -3] Temporary failure in name resolution)\"))",
+          "timestamp": "2025-10-26T16:59:18.753305"
+        },
+        {
+          "retailer": "Régions (TER)",
+          "price": null,
+          "url": null,
+          "promo": false,
+          "available": false,
+          "note": "Varie selon région",
+          "timestamp": "2025-10-26T16:59:18.753348"
+        }
+      ]
+    },
+    {
+      "name": "Carte Avantage Adulte",
+      "description": "Pour les 27-59 ans",
+      "prices": [
+        {
+          "retailer": "SNCF Connect",
+          "price": 49.0,
+          "url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-adulte",
+          "promo": false,
+          "available": true,
+          "error": "HTTPSConnectionPool(host='www.sncf-connect.com', port=443): Max retries exceeded with url: /catalogue/description/carte-avantage-adulte (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7ee69fd0eb70>: Failed to resolve 'www.sncf-connect.com' ([Errno -3] Temporary failure in name resolution)\"))",
+          "timestamp": "2025-10-26T16:59:14.747412"
+        },
+        {
+          "retailer": "Trainline",
+          "price": 49.0,
+          "url": "https://www.thetrainline.com/fr/compagnies-ferroviaires/sncf/cartes-abonnements-de-train",
+          "promo": false,
+          "available": true,
+          "error": "HTTPSConnectionPool(host='www.thetrainline.com', port=443): Max retries exceeded with url: /fr/compagnies-ferroviaires/sncf/cartes-abonnements-de-train (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7ee69fd0f7a0>: Failed to resolve 'www.thetrainline.com' ([Errno -3] Temporary failure in name resolution)\"))",
+          "timestamp": "2025-10-26T16:59:16.751319"
+        },
+        {
+          "retailer": "Omio",
+          "price": 49.0,
+          "url": "https://www.omio.fr/trains/reductions-sncf",
+          "promo": false,
+          "available": true,
+          "error": "HTTPSConnectionPool(host='www.omio.fr', port=443): Max retries exceeded with url: /trains/reductions-sncf (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7ee69fd0ec90>: Failed to resolve 'www.omio.fr' ([Errno -3] Temporary failure in name resolution)\"))",
+          "timestamp": "2025-10-26T16:59:18.753317"
+        },
+        {
+          "retailer": "Régions (TER)",
+          "price": null,
+          "url": null,
+          "promo": false,
+          "available": false,
+          "note": "Varie selon région",
+          "timestamp": "2025-10-26T16:59:18.753351"
+        }
+      ]
+    },
+    {
+      "name": "Carte Avantage Senior",
+      "description": "Pour les 60 ans et plus",
+      "prices": [
+        {
+          "retailer": "SNCF Connect",
+          "price": 49.0,
+          "url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-senior",
+          "promo": false,
+          "available": true,
+          "error": "HTTPSConnectionPool(host='www.sncf-connect.com', port=443): Max retries exceeded with url: /catalogue/description/carte-avantage-senior (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7ee69fd0f2f0>: Failed to resolve 'www.sncf-connect.com' ([Errno -3] Temporary failure in name resolution)\"))",
+          "timestamp": "2025-10-26T16:59:14.748487"
+        },
+        {
+          "retailer": "Trainline",
+          "price": 49.0,
+          "url": "https://www.thetrainline.com/fr/compagnies-ferroviaires/sncf/cartes-abonnements-de-train",
+          "promo": false,
+          "available": true,
+          "error": "HTTPSConnectionPool(host='www.thetrainline.com', port=443): Max retries exceeded with url: /fr/compagnies-ferroviaires/sncf/cartes-abonnements-de-train (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7ee69fd0f7a0>: Failed to resolve 'www.thetrainline.com' ([Errno -3] Temporary failure in name resolution)\"))",
+          "timestamp": "2025-10-26T16:59:16.751321"
+        },
+        {
+          "retailer": "Omio",
+          "price": 49.0,
+          "url": "https://www.omio.fr/trains/reductions-sncf",
+          "promo": false,
+          "available": true,
+          "error": "HTTPSConnectionPool(host='www.omio.fr', port=443): Max retries exceeded with url: /trains/reductions-sncf (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7ee69fd0ec90>: Failed to resolve 'www.omio.fr' ([Errno -3] Temporary failure in name resolution)\"))",
+          "timestamp": "2025-10-26T16:59:18.753320"
+        },
+        {
+          "retailer": "Régions (TER)",
+          "price": null,
+          "url": null,
+          "promo": false,
+          "available": false,
+          "note": "Varie selon région",
+          "timestamp": "2025-10-26T16:59:18.753354"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "scraper_version": "1.0",
+    "retailers": [
+      "SNCF Connect",
+      "Trainline",
+      "Omio",
+      "Régions (TER)"
+    ]
+  }
+}
