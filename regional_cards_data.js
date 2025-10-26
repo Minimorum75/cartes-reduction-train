@@ -15,7 +15,7 @@ const regionalCards = {
         "validity": "1 an",
         "discount": "Jusqu'à -50%",
         "description": "Carte de réduction pour les trajets TER en région",
-        "url": "https://ter.sncf.com/auvergne-rhone-alpes/offres/abonnements-cartes"
+        "url": "https://www.ter.sncf.com/auvergne-rhone-alpes/tarifs-cartes/cartes-reduction/illico-liberte-jeunes"
       },
       {
         "name": "Illico Liberté",
@@ -24,7 +24,7 @@ const regionalCards = {
         "validity": "1 an",
         "discount": "-25% à -50%",
         "description": "Carte de réduction pour les trajets TER en région",
-        "url": "https://ter.sncf.com/auvergne-rhone-alpes/offres/abonnements-cartes"
+        "url": "https://www.ter.sncf.com/auvergne-rhone-alpes/tarifs-cartes/cartes-reduction/illico-liberte"
       }
     ]
   },
