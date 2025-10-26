@@ -233,8 +233,6 @@ class RailcardPriceScraper:
         all_cards.extend(self.scrape_sncf_connect())
         time.sleep(2)
         all_cards.extend(self.scrape_trainline())
-        time.sleep(2)
-        all_cards.extend(self.scrape_omio())
         
         # Organize by card type
         organized = {
@@ -264,7 +262,7 @@ class RailcardPriceScraper:
             'cards': list(organized.values()),
             'metadata': {
                 'scraper_version': '1.0',
-                'retailers': ['SNCF Connect', 'Trainline', 'Omio', 'Régions (TER)']
+                'retailers': ['SNCF Connect', 'Trainline', 'Régions (TER)']
             }
         }
         
