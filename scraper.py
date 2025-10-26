@@ -114,14 +114,29 @@ class RailcardPriceScraper:
                 promo = False
                 note = None
                 
-                # Check for promotional prices
-                if 'promo' in text.lower() or 'réduction' in text.lower():
-                    # Look for reduced prices
-                    promo_matches = re.findall(r'(\d+)\s*€.*?(promo|réduction)', text, re.IGNORECASE)
-                    if promo_matches:
-                        price = float(promo_matches[0][0])
-                        promo = True
-                        note = "Promotion en cours"
+                # Check for promotional prices (only if price is different from 49€)
+                # Look for patterns like "39€ en promo" or "prix spécial"
+                promo_patterns = [
+                    r'(\d+)\s*€.*?(en\s+promo|promotion|prix\s+spécial|offre\s+spéciale)',
+                    r'(promo|promotion|offre).*?(\d+)\s*€'
+                ]
+                
+                for pattern in promo_patterns:
+                    matches = re.findall(pattern, text, re.IGNORECASE)
+                    if matches:
+                        potential_price = None
+                        for match in matches:
+                            # Extract the number from the match
+                            numbers = [m for m in match if m.isdigit() or m.replace('.', '').isdigit()]
+                            if numbers:
+                                potential_price = float(numbers[0])
+                                if potential_price != 49.0:  # Only mark as promo if price differs
+                                    price = potential_price
+                                    promo = True
+                                    note = "Promotion en cours"
+                                    break
+                        if promo:
+                            break
                 
                 cards.append({
                     'type': card_type,
