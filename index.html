@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparateur de Cartes de Réduction Train - Prix Automatiques</title>
+    <title>Comparateur de Cartes de Réduction Train - France</title>
     <style>
         * {
             margin: 0;
@@ -71,11 +71,12 @@
         }
 
         .filter-group select, .filter-group input {
-            padding: 8px 12px;
+            padding: 10px 14px;
             border: 2px solid #e0e0e0;
             border-radius: 6px;
             font-size: 14px;
             transition: border-color 0.3s;
+            min-width: 200px;
         }
 
         .filter-group select:focus, .filter-group input:focus {
@@ -83,19 +84,46 @@
             border-color: #667eea;
         }
 
-        .refresh-btn {
-            padding: 10px 20px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s;
+        .region-selector {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .refresh-btn:hover {
-            background: #5568d3;
+        .region-selector h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .region-selector select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        .region-selector select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 1.8em;
+            margin: 30px 0 20px 0;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: white;
+            text-align: center;
+            opacity: 0.9;
+            margin-bottom: 20px;
         }
 
         .cards-grid {
@@ -131,6 +159,16 @@
         .card-subtitle {
             color: #666;
             font-size: 0.9em;
+        }
+
+        .card-age {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            color: #555;
+            margin-top: 8px;
         }
 
         .retailers {
@@ -172,6 +210,15 @@
             color: #667eea;
         }
 
+        .price-free {
+            color: #2ecc71;
+        }
+
+        .price-variable {
+            color: #f39c12;
+            font-size: 0.9em;
+        }
+
         .promo {
             display: inline-block;
             background: #ff4757;
@@ -188,6 +235,16 @@
             color: white;
             padding: 8px 12px;
             border-radius: 6px;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-top: 8px;
         }
 
         .unavailable {
@@ -211,6 +268,7 @@
         .info-box p {
             color: #666;
             line-height: 1.6;
+            margin-bottom: 10px;
         }
 
         .update-info {
@@ -235,6 +293,11 @@
             .cards-grid {
                 grid-template-columns: 1fr;
             }
+
+            .filter-group select {
+                min-width: auto;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -242,87 +305,113 @@
     <div class="container">
         <header>
             <h1>🚄 Comparateur de Cartes de Réduction Train</h1>
-            <p class="subtitle">Comparez les prix des cartes SNCF entre différents distributeurs</p>
+            <p class="subtitle">Comparez les prix des cartes SNCF nationales et régionales</p>
             <span class="auto-badge">🤖 Prix mis à jour automatiquement</span>
         </header>
+
+        <div class="region-selector">
+            <h2>📍 Sélectionnez votre région</h2>
+            <select id="region-select" onchange="updateDisplay()">
+                <option value="national">🇫🇷 Toute la France (Cartes nationales TGV/INTERCITÉS)</option>
+                <option value="auvergne-rhone-alpes">Auvergne-Rhône-Alpes</option>
+                <option value="bourgogne-franche-comte">Bourgogne-Franche-Comté</option>
+                <option value="bretagne">Bretagne</option>
+                <option value="centre-val-de-loire">Centre-Val de Loire</option>
+                <option value="corse">Corse</option>
+                <option value="grand-est">Grand Est</option>
+                <option value="hauts-de-france">Hauts-de-France</option>
+                <option value="ile-de-france">Île-de-France</option>
+                <option value="normandie">Normandie</option>
+                <option value="nouvelle-aquitaine">Nouvelle-Aquitaine</option>
+                <option value="occitanie">Occitanie</option>
+                <option value="pays-de-la-loire">Pays de la Loire</option>
+                <option value="provence-alpes-cote-dazur">Provence-Alpes-Côte d'Azur</option>
+            </select>
+        </div>
 
         <div class="filters">
             <div class="filter-group">
                 <label for="card-type">Type de carte:</label>
-                <select id="card-type">
+                <select id="card-type" onchange="updateDisplay()">
                     <option value="all">Toutes les cartes</option>
-                    <option value="jeune">Carte Avantage Jeune</option>
-                    <option value="senior">Carte Avantage Senior</option>
-                    <option value="adulte">Carte Avantage Adulte</option>
+                    <option value="jeune">Jeunes / Étudiants</option>
+                    <option value="adulte">Adultes</option>
                 </select>
 
                 <label for="sort">Trier par:</label>
-                <select id="sort">
+                <select id="sort" onchange="updateDisplay()">
                     <option value="price-low">Prix croissant</option>
                     <option value="price-high">Prix décroissant</option>
                     <option value="name">Nom</option>
                 </select>
-
-                <button class="refresh-btn" onclick="refreshData()">🔄 Actualiser</button>
             </div>
         </div>
 
         <div id="loading" class="loading">Chargement des prix...</div>
-        <div class="cards-grid" id="cards-container" style="display:none;"></div>
+
+        <!-- National Cards Section -->
+        <div id="national-section" style="display:none;">
+            <h2 class="section-title">Cartes Nationales (TGV INOUI, INTERCITÉS)</h2>
+            <p class="section-subtitle">Valables sur tout le réseau national</p>
+            <div class="cards-grid" id="national-cards"></div>
+        </div>
+
+        <!-- Regional Cards Section -->
+        <div id="regional-section" style="display:none;">
+            <h2 class="section-title" id="regional-title">Cartes Régionales</h2>
+            <p class="section-subtitle" id="regional-subtitle"></p>
+            <div class="cards-grid" id="regional-cards"></div>
+        </div>
 
         <div class="info-box">
             <h2>ℹ️ À propos de ce comparateur</h2>
             <p>
-                <strong>Mise à jour automatique:</strong> Les prix sont automatiquement récupérés depuis les sites officiels 
-                (SNCF Connect, Trainline, Omio) et mis à jour régulièrement.
+                <strong>Mise à jour automatique:</strong> Les prix des cartes nationales sont automatiquement 
+                récupérés depuis les sites officiels (SNCF Connect, Trainline) et mis à jour quotidiennement.
             </p>
             <p style="margin-top: 12px;">
-                <strong>Comment ça marche:</strong> Un script Python scrape les prix sur les différentes plateformes 
-                et génère automatiquement les données affichées sur ce site. Vous voyez toujours les prix les plus récents disponibles.
+                <strong>Cartes régionales:</strong> Les prix des cartes TER régionales sont mis à jour 
+                manuellement car chaque région a son propre système. Vérifiez toujours sur le site officiel 
+                de votre région avant d'acheter.
             </p>
             <p style="margin-top: 12px;">
-                <strong>⚠️ Important:</strong> Bien que nous fassions de notre mieux pour maintenir les données à jour, 
-                vérifiez toujours les prix sur les sites officiels avant d'acheter, car des promotions peuvent survenir à tout moment.
+                <strong>⚠️ Important:</strong> Les prix affichés sont indicatifs. Vérifiez toujours 
+                les conditions et tarifs actuels sur les sites officiels avant d'effectuer un achat.
             </p>
         </div>
 
         <div class="update-info">
             <p>Dernière mise à jour: <span id="last-update">-</span></p>
-            <p style="font-size: 0.9em; margin-top: 5px;">Prochaine actualisation automatique dans <span id="next-update">-</span></p>
         </div>
     </div>
 
     <script src="railcard_data.js"></script>
+    <script src="regional_cards_data.js"></script>
     <script>
-        let railcards = [];
+        let nationalCards = [];
+        let currentRegion = 'national';
+
+        function formatPrice(price) {
+            if (price === null || price === undefined) {
+                return '<span class="price-variable">Prix variable</span>';
+            }
+            if (price === 0) {
+                return '<span class="price price-free">GRATUIT</span>';
+            }
+            return `<span class="price">${price}€</span>`;
+        }
 
         function findBestPrice(prices) {
-            const availablePrices = prices.filter(p => p.available && p.price !== null);
+            const availablePrices = prices.filter(p => p.available && p.price !== null && p.price > 0);
             if (availablePrices.length === 0) return null;
             return Math.min(...availablePrices.map(p => p.price));
         }
 
-        function renderCards(cards, sortBy = 'name') {
-            let sortedCards = [...cards];
-            
-            if (sortBy === 'price-low') {
-                sortedCards.sort((a, b) => {
-                    const priceA = findBestPrice(a.prices) || Infinity;
-                    const priceB = findBestPrice(b.prices) || Infinity;
-                    return priceA - priceB;
-                });
-            } else if (sortBy === 'price-high') {
-                sortedCards.sort((a, b) => {
-                    const priceA = findBestPrice(a.prices) || 0;
-                    const priceB = findBestPrice(b.prices) || 0;
-                    return priceB - priceA;
-                });
-            }
-
-            const container = document.getElementById('cards-container');
+        function renderNationalCards(cards) {
+            const container = document.getElementById('national-cards');
             container.innerHTML = '';
 
-            sortedCards.forEach(card => {
+            cards.forEach(card => {
                 const bestPrice = findBestPrice(card.prices);
                 
                 const cardHTML = `
@@ -337,20 +426,16 @@
                                     return `
                                         <div class="retailer-item">
                                             <span class="retailer-name">${p.retailer}</span>
-                                            <span class="unavailable">Non disponible${p.note ? ` - ${p.note}` : ''}</span>
+                                            <span class="unavailable">Non disponible</span>
                                         </div>
                                     `;
                                 }
-                                const isBest = p.price === bestPrice;
+                                const isBest = p.price === bestPrice && p.price > 0;
                                 const onClick = p.url ? `onclick="window.open('${p.url}', '_blank')"` : '';
-                                const cursorStyle = p.url ? 'cursor: pointer;' : '';
                                 return `
-                                    <div class="retailer-item" ${onClick} style="${cursorStyle}">
-                                        <div>
-                                            <span class="retailer-name">${p.retailer}</span>
-                                            ${p.note ? `<div style="font-size: 0.8em; color: #888; margin-top: 4px;">${p.note}</div>` : ''}
-                                        </div>
-                                        <span class="price ${isBest ? 'best-price' : ''}">${p.price}€${p.promo ? '<span class="promo">PROMO</span>' : ''}</span>
+                                    <div class="retailer-item" ${onClick}>
+                                        <span class="retailer-name">${p.retailer}</span>
+                                        <span class="${isBest ? 'best-price' : 'price'}">${p.price}€${p.promo ? '<span class="promo">PROMO</span>' : ''}</span>
                                     </div>
                                 `;
                             }).join('')}
@@ -361,25 +446,75 @@
             });
         }
 
+        function renderRegionalCards(regionKey) {
+            const container = document.getElementById('regional-cards');
+            const region = regionalCards[regionKey];
+            
+            if (!region) {
+                container.innerHTML = '<p style="color: white;">Aucune donnée disponible pour cette région.</p>';
+                return;
+            }
+
+            document.getElementById('regional-title').textContent = `Cartes Régionales ${region.name}`;
+            document.getElementById('regional-subtitle').textContent = `Système ${region.system} - Valables sur le réseau TER`;
+
+            container.innerHTML = '';
+
+            region.cards.forEach(card => {
+                const cardHTML = `
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">${card.name}</h3>
+                            <span class="card-age">${card.age}</span>
+                            <span class="discount-badge">${card.discount}</span>
+                        </div>
+                        <div class="retailers">
+                            <div class="retailer-item" onclick="window.open('${card.url}', '_blank')">
+                                <div>
+                                    <div class="retailer-name">${region.system}</div>
+                                    <div style="font-size: 0.85em; color: #888; margin-top: 4px;">${card.description}</div>
+                                    <div style="font-size: 0.85em; color: #888;">Validité: ${card.validity}</div>
+                                </div>
+                                ${formatPrice(card.price)}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
+        }
+
+        function updateDisplay() {
+            const region = document.getElementById('region-select').value;
+            currentRegion = region;
+
+            const nationalSection = document.getElementById('national-section');
+            const regionalSection = document.getElementById('regional-section');
+
+            if (region === 'national') {
+                nationalSection.style.display = 'block';
+                regionalSection.style.display = 'none';
+                renderNationalCards(nationalCards);
+            } else {
+                nationalSection.style.display = 'block';
+                regionalSection.style.display = 'block';
+                renderNationalCards(nationalCards);
+                renderRegionalCards(region);
+            }
+        }
+
         function loadData() {
             try {
-                // railcardData is loaded from railcard_data.js
                 if (typeof railcardData !== 'undefined') {
-                    railcards = railcardData;
+                    nationalCards = railcardData;
                     document.getElementById('loading').style.display = 'none';
-                    document.getElementById('cards-container').style.display = 'grid';
-                    renderCards(railcards);
+                    updateDisplay();
                     
                     // Update last update time
                     if (typeof lastUpdate !== 'undefined') {
                         const date = new Date(lastUpdate);
                         document.getElementById('last-update').textContent = date.toLocaleString('fr-FR');
                     }
-                    
-                    // Calculate next update (assuming daily updates)
-                    const nextUpdate = new Date(new Date(lastUpdate).getTime() + 24 * 60 * 60 * 1000);
-                    const hoursUntil = Math.round((nextUpdate - new Date()) / (1000 * 60 * 60));
-                    document.getElementById('next-update').textContent = `${hoursUntil}h`;
                 } else {
                     throw new Error('Données non disponibles');
                 }
@@ -388,24 +523,6 @@
                 document.getElementById('loading').textContent = 'Erreur de chargement. Veuillez actualiser la page.';
             }
         }
-
-        function refreshData() {
-            alert('Pour actualiser les données, exécutez le script scraper.py sur le serveur.\nUne actualisation automatique est prévue quotidiennement.');
-        }
-
-        // Event listeners
-        document.getElementById('card-type').addEventListener('change', (e) => {
-            const type = e.target.value;
-            const sortBy = document.getElementById('sort').value;
-            const filtered = type === 'all' ? railcards : railcards.filter(c => c.name.toLowerCase().includes(type));
-            renderCards(filtered, sortBy);
-        });
-
-        document.getElementById('sort').addEventListener('change', (e) => {
-            const type = document.getElementById('card-type').value;
-            const filtered = type === 'all' ? railcards : railcards.filter(c => c.name.toLowerCase().includes(type));
-            renderCards(filtered, e.target.value);
-        });
 
         // Load data on page load
         loadData();
