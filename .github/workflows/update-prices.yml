@@ -6,7 +6,7 @@ on:
     - cron: '0 2 * * *'
   workflow_dispatch: # Permet de lancer manuellement
 
-# IMPORTANT: Donner les permissions nécessaires pour pusher
+# Donner les permissions d'écriture
 permissions:
   contents: write
 
@@ -16,10 +16,13 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        persist-credentials: true
     
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
     
@@ -31,9 +34,20 @@ jobs:
       run: |
         python scraper.py
     
-    - name: Commit and push if changes
+    - name: Check for changes
+      id: check_changes
       run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
+        if [[ -n $(git status -s) ]]; then
+          echo "changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "changes=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.changes == 'true'
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
         git add railcard_data.js railcard_prices.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-update prices $(date '+%Y-%m-%d')" && git push)
+        git commit -m "🤖 Auto-update prices $(date '+%Y-%m-%d %H:%M')"
+        git push
