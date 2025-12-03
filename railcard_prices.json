@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-02T03:15:52.091034",
+  "last_updated": "2025-12-03T03:14:37.744037",
   "cards": [
     {
       "name": "Carte Avantage Jeune",
@@ -11,7 +11,7 @@
           "url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-jeune",
           "promo": false,
           "available": true,
-          "timestamp": "2025-12-02T03:15:44.146675"
+          "timestamp": "2025-12-03T03:14:30.838730"
         },
         {
           "retailer": "Trainline",
@@ -20,7 +20,7 @@
           "promo": true,
           "available": true,
           "note": "Promotion en cours",
-          "timestamp": "2025-12-02T03:15:52.082306"
+          "timestamp": "2025-12-03T03:14:37.727904"
         },
         {
           "retailer": "Régions (TER)",
@@ -29,7 +29,7 @@
           "promo": false,
           "available": false,
           "note": "Varie selon région",
-          "timestamp": "2025-12-02T03:15:52.091028"
+          "timestamp": "2025-12-03T03:14:37.744027"
         }
       ]
     },
@@ -43,7 +43,8 @@
           "url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-adulte",
           "promo": false,
           "available": true,
-          "timestamp": "2025-12-02T03:15:46.282005"
+          "error": "403 Client Error: Forbidden for url: https://www.sncf-connect.com/catalogue/description/carte-avantage-adulte",
+          "timestamp": "2025-12-03T03:14:32.241569"
         },
         {
           "retailer": "Trainline",
@@ -52,7 +53,7 @@
           "promo": true,
           "available": true,
           "note": "Promotion en cours",
-          "timestamp": "2025-12-02T03:15:52.086179"
+          "timestamp": "2025-12-03T03:14:37.735518"
         },
         {
           "retailer": "Régions (TER)",
@@ -61,7 +62,7 @@
           "promo": false,
           "available": false,
           "note": "Varie selon région",
-          "timestamp": "2025-12-02T03:15:52.091031"
+          "timestamp": "2025-12-03T03:14:37.744032"
         }
       ]
     },
@@ -75,7 +76,7 @@
           "url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-senior",
           "promo": false,
           "available": true,
-          "timestamp": "2025-12-02T03:15:48.175434"
+          "timestamp": "2025-12-03T03:14:33.514872"
         },
         {
           "retailer": "Trainline",
@@ -84,7 +85,7 @@
           "promo": true,
           "available": true,
           "note": "Promotion en cours",
-          "timestamp": "2025-12-02T03:15:52.089996"
+          "timestamp": "2025-12-03T03:14:37.743049"
         },
         {
           "retailer": "Régions (TER)",
@@ -93,7 +94,7 @@
           "promo": false,
           "available": false,
           "note": "Varie selon région",
-          "timestamp": "2025-12-02T03:15:52.091033"
+          "timestamp": "2025-12-03T03:14:37.744035"
         }
       ]
     }
