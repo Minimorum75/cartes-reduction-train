@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-15T04:43:09.732336",
+  "last_updated": "2026-04-16T04:48:50.159893",
   "cards": [
     {
       "name": "Carte Avantage Jeune",
@@ -11,7 +11,7 @@
           "url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-jeune",
           "promo": false,
           "available": true,
-          "timestamp": "2026-04-15T04:43:01.698248"
+          "timestamp": "2026-04-16T04:48:43.172104"
         },
         {
           "retailer": "Trainline",
@@ -20,7 +20,7 @@
           "promo": true,
           "available": true,
           "note": "Promotion en cours",
-          "timestamp": "2026-04-15T04:43:09.727685"
+          "timestamp": "2026-04-16T04:48:50.155211"
         },
         {
           "retailer": "Régions (TER)",
@@ -29,7 +29,7 @@
           "promo": false,
           "available": false,
           "note": "Varie selon région",
-          "timestamp": "2026-04-15T04:43:09.732325"
+          "timestamp": "2026-04-16T04:48:50.159888"
         }
       ]
     },
@@ -43,7 +43,7 @@
           "url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-adulte",
           "promo": false,
           "available": true,
-          "timestamp": "2026-04-15T04:43:03.971174"
+          "timestamp": "2026-04-16T04:48:44.450656"
         },
         {
           "retailer": "Trainline",
@@ -52,7 +52,7 @@
           "promo": true,
           "available": true,
           "note": "Promotion en cours",
-          "timestamp": "2026-04-15T04:43:09.729447"
+          "timestamp": "2026-04-16T04:48:50.156928"
         },
         {
           "retailer": "Régions (TER)",
@@ -61,7 +61,7 @@
           "promo": false,
           "available": false,
           "note": "Varie selon région",
-          "timestamp": "2026-04-15T04:43:09.732329"
+          "timestamp": "2026-04-16T04:48:50.159891"
         }
       ]
     },
@@ -75,7 +75,7 @@
           "url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-senior",
           "promo": false,
           "available": true,
-          "timestamp": "2026-04-15T04:43:05.752944"
+          "timestamp": "2026-04-16T04:48:46.008779"
         },
         {
           "retailer": "Trainline",
@@ -84,7 +84,7 @@
           "promo": true,
           "available": true,
           "note": "Promotion en cours",
-          "timestamp": "2026-04-15T04:43:09.731180"
+          "timestamp": "2026-04-16T04:48:50.158738"
         },
         {
           "retailer": "Régions (TER)",
@@ -93,7 +93,7 @@
           "promo": false,
           "available": false,
           "note": "Varie selon région",
-          "timestamp": "2026-04-15T04:43:09.732335"
+          "timestamp": "2026-04-16T04:48:50.159892"
         }
       ]
     }
