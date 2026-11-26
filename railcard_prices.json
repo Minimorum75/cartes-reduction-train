@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T10:49:18.346906",
+  "last_updated": "2026-11-26T10:22:56.413654",
   "cards": [
     {
       "name": "Carte Avantage Jeune",
@@ -12,7 +12,7 @@
           "promo": false,
           "available": true,
           "error": "403 Client Error: Forbidden for url: https://www.sncf-connect.com/catalogue/description/carte-avantage-jeune",
-          "timestamp": "2026-11-25T10:49:13.715598"
+          "timestamp": "2026-11-26T10:22:51.664775"
         },
         {
           "retailer": "Trainline",
@@ -21,7 +21,7 @@
           "promo": true,
           "available": true,
           "note": "Promotion en cours",
-          "timestamp": "2026-11-25T10:49:18.342463"
+          "timestamp": "2026-11-26T10:22:56.409196"
         },
         {
           "retailer": "Régions (TER)",
@@ -30,7 +30,7 @@
           "promo": false,
           "available": false,
           "note": "Varie selon région",
-          "timestamp": "2026-11-25T10:49:18.346900"
+          "timestamp": "2026-11-26T10:22:56.413649"
         }
       ]
     },
@@ -45,7 +45,7 @@
           "promo": false,
           "available": true,
           "error": "403 Client Error: Forbidden for url: https://www.sncf-connect.com/catalogue/description/carte-avantage-adulte",
-          "timestamp": "2026-11-25T10:49:13.852582"
+          "timestamp": "2026-11-26T10:22:51.834752"
         },
         {
           "retailer": "Trainline",
@@ -54,7 +54,7 @@
           "promo": true,
           "available": true,
           "note": "Promotion en cours",
-          "timestamp": "2026-11-25T10:49:18.344271"
+          "timestamp": "2026-11-26T10:22:56.411034"
         },
         {
           "retailer": "Régions (TER)",
@@ -63,7 +63,7 @@
           "promo": false,
           "available": false,
           "note": "Varie selon région",
-          "timestamp": "2026-11-25T10:49:18.346903"
+          "timestamp": "2026-11-26T10:22:56.413652"
         }
       ]
     },
@@ -77,7 +77,7 @@
           "url": "https://www.sncf-connect.com/catalogue/description/carte-avantage-senior",
           "promo": false,
           "available": true,
-          "timestamp": "2026-11-25T10:49:14.507426"
+          "timestamp": "2026-11-26T10:22:52.675841"
         },
         {
           "retailer": "Trainline",
@@ -86,7 +86,7 @@
           "promo": true,
           "available": true,
           "note": "Promotion en cours",
-          "timestamp": "2026-11-25T10:49:18.346055"
+          "timestamp": "2026-11-26T10:22:56.412861"
         },
         {
           "retailer": "Régions (TER)",
@@ -95,7 +95,7 @@
           "promo": false,
           "available": false,
           "note": "Varie selon région",
-          "timestamp": "2026-11-25T10:49:18.346905"
+          "timestamp": "2026-11-26T10:22:56.413653"
         }
       ]
     }
